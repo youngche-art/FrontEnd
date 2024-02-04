@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Bs1Circle, BsSearch, BsYoutube } from "react-icons/bs";
+
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Navigation from "./Navigation";
 import Login from "./Login";
@@ -15,9 +15,9 @@ export default function SearchHeader() {
 
   useEffect(() => setText(keyword || ""), [keyword]);
   return (
-    <header className="w-full flex p-4 text-2xl border-b border-zinc-600 mb-4  justify-between items-center h-32">
+    <header className="w-full flex p-4 text-2xl border-b border-zinc-600 mb-4  justify-between items-center hover:bg-white hover:text-black fixed">
       <Link to="/" className="flex items-center justify-start ">
-        <h1 className="text-2xl font-bold inline-block relative w-64 ">
+        <h1 className="text-2xl font-bold inline-block relative w-64 font-customFont hover:text-pink-800">
           YoungCheArt
         </h1>
       </Link>

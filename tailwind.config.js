@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         brand: "#FF000",
       },
+      fontFamily: {
+        customFont: ["minerva-modern"],
+      },
     },
   },
   plugins: [],

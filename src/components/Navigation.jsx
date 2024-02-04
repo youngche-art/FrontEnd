@@ -1,30 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import Login from "./Login";
 
 export default function Navigation() {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const [isHeight, setIsHeight] = useState(false);
+
   return (
-    <div>
-      <ul className="flex  items-center">
-        <li className="inline-block align-top relative p-12">
-          <a class="header__menu__item active" href="">
+    <div className="">
+      <ul className="flex  items-center ">
+        <li className="inline-block align-top relative p-4 font-customFont  hover:underline ">
+          <a className="hover:text-pink-800 pr-8 " href="">
             Home
           </a>
+          <div
+            className={`border-b  ${isHovered ? "visible" : "hidden"}`}
+          ></div>
         </li>
 
-        <li className="inline-block align-top relative p-12">
-          <a class="header__menu__item" href="">
-            Products
+        <li className="inline-block align-top relative p-4 font-customFont hover:underline ">
+          <a class="header__menu__item hover:text-pink-800 pr-8" href="">
+            Pictures
           </a>
         </li>
 
-        <li className="inline-block align-top relative p-12">
-          <a class="header__menu__item" href="{% url 'lists:see-favs' %}">
+        <li className="inline-block align-top relative p-4 font-customFont hover:underline">
+          <a
+            class="header__menu__item hover:text-pink-800 pr-8"
+            href="{% url 'lists:see-favs' %}"
+          >
             Favs
           </a>
         </li>
 
-        <li className="inline-block align-top relative p-12">
-          <a href="{{user.get_absolute_url}}">Profile</a>
+        <li className="inline-block align-top relative p-4 font-customFont  hover:underline pr-8 ">
+          <a className="hover:text-pink-800">Profile</a>
         </li>
       </ul>
     </div>

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: minerva-modern;
+  src: url(https://use.typekit.net/af/2d15e1/00000000000000003b9afd25/27/l?subset_id=2&fvd=n4&v=3);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -9,8 +14,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  list-style: none;
 
-  width: 100vw;
   height: 100vh;
   @apply flex flex-col items-center;
   @apply bg-zinc-900 text-gray-50;
@@ -23,4 +28,20 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.blinking-text {
+  animation: blink 3s infinite;
 }

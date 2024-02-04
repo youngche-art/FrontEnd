@@ -2,13 +2,10 @@ import React from "react";
 
 export default function Login() {
   return (
-    <div>
+    <div className="flex items-center gap-4 overflow-hidden text-center">
       <li>
-        <a class="header__menu__item">Login</a>
-      </li>
-      |
-      <li>
-        <a class="header__menu__item">회원가입</a>
+        <a className="text-base">Login</a> |{" "}
+        <a className="text-base">회원가입</a>
       </li>
     </div>
   );

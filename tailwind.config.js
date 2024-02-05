@@ -8,6 +8,7 @@ module.exports = {
       },
       fontFamily: {
         customFont: ["minerva-modern"],
+        diphylleia: ["Diphylleia", "serif"],
       },
     },
   },

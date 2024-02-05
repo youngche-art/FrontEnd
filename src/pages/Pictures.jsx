@@ -6,45 +6,32 @@ import PictureCard from "../components/PictureCard";
 import Home from "./Home";
 import About from "./About";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import Today from "./Today";
+import Footer from "../components/Footer";
+import { Link, Element, scroller } from "react-scroll";
 
 const Pictures = () => {
-  const { keyword } = useParams();
-  const {
-    isLoading,
-    error,
-    data: videos,
-  } = useQuery(["videos", keyword], async () => {
-    return fetch(`/videos/${keyword ? "picture" : "picture"}.json`)
-      .then((res) => res.json())
-      .then((data) => data);
-  });
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3, // 3개씩 보여주도록 설정
-    slidesToScroll: 1,
+  const scrollToSection = (sectionId) => {
+    // 부드러운 스크롤을 위해 react-scroll 라이브러리 사용
+    console.log("hello");
+    scroller.scrollTo(sectionId, {
+      duration: 800,
+      smooth: "easeInOutQuart",
+    });
   };
 
   return (
     <>
-      <Home></Home>
-      <About></About>
-      <div className="bg-white text-black p-12 ">
-        {isLoading && <p>Loading...</p>}
-        {error && <p>Something is wrong...</p>}
-        {videos && (
-          <Slider {...settings} className="p-12">
-            {videos.map((video) => (
-              <PictureCard key={video.id} video={video}></PictureCard>
-            ))}
-          </Slider>
-        )}
-      </div>
+      <Home scrollToSection={scrollToSection}></Home>
+
+      <About scrollToSection={scrollToSection}></About>
+
+      <Element name="today" className="section">
+        <Today></Today>
+      </Element>
+
+      <Footer></Footer>
     </>
   );
 };

@@ -2,13 +2,13 @@ import React from "react";
 
 export default function PictureCard({ video }) {
   return (
-    <div className="p-4">
+    <div className="rounded-lg shadow-md  cursor-pointer m-8 flex justify-center flex-col">
       <img
-        src="/imgs/gallery.jpg"
+        src={video.이미지}
         alt="Your Image Description"
-        className="w-full h-screen"
+        className="w-full object-cover object-center p-4 h-[284px]"
       ></img>
-      {video.제목}
+      <div className="flex justify-center p-8"> {video.제목}</div>
     </div>
   );
 }

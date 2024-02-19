@@ -5,15 +5,19 @@ import { Element, scroller } from "react-scroll";
 export default function Home({ scrollToSection }) {
   return (
     <Element name="home" className="section">
-      <section id="home" className="">
-        <img
-          src="/imgs/gallery.jpg"
+      <section id="home" className="relative flex justify-center">
+        <video
+          src="/videos/gallery.mp4"
           alt="Your Image Description"
           className="w-full h-screen object-cover "
-        ></img>
+          autoPlay
+          loop
+          muted
+          playsInline
+        ></video>
 
-        <button
-          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl flex items-center flex-col blinking-text"
+        <div
+          className=" text-2xl flex justify-center items-center flex-col blinking-text absolute bottom-12 "
           onClick={() => scrollToSection("about")}
         >
           <h1>scroll</h1>
@@ -21,7 +25,7 @@ export default function Home({ scrollToSection }) {
             onClick={() => scrollToSection("about")}
             className="text-2xl "
           />
-        </button>
+        </div>
       </section>
     </Element>
   );

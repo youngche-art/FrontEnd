@@ -7,6 +7,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Pictures from "./pages/Pictures";
 import PictureDetail from "./pages/PictureDetail";
+import Lists from "./pages/Lists";
 
 const router = createBrowserRouter([
   {
@@ -15,9 +16,10 @@ const router = createBrowserRouter([
     errorElement: <NotFound></NotFound>,
     children: [
       { index: true, element: <Pictures /> },
-      { path: "pictures", element: <Pictures /> },
-      { path: "pictures/:keyword", element: <Pictures /> },
-      { path: "pictures/watch/:pictureId", element: <PictureDetail /> },
+      { path: "pictures", element: <Lists /> },
+
+      { path: "pictures/:keyword", element: <PictureDetail /> },
+      { path: "pictures/:pictureId", element: <PictureDetail /> },
     ],
   },
 ]);

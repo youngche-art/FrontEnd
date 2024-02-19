@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import PictureCard from "../components/PictureCard";
@@ -21,16 +21,27 @@ const Pictures = () => {
     });
   };
 
+  // const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  // useEffect(() => {
+  //   const handleMouseMove = (e) => {
+  //     setPosition({ x: e.clientX, y: e.clientY });
+  //   };
+
+  //   window.addEventListener("mousemove", handleMouseMove);
+
+  //   return () => {
+  //     window.removeEventListener("mousemove", handleMouseMove);
+  //   };
+  // }, []);
+
   return (
     <>
       <Home scrollToSection={scrollToSection}></Home>
-
       <About scrollToSection={scrollToSection}></About>
-
       <Element name="today" className="section">
         <Today></Today>
       </Element>
-
       <Footer></Footer>
     </>
   );

@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         customFont: ["minerva-modern"],
         diphylleia: ["Diphylleia", "serif"],
+        dongle: ["GowunDodum-Regular"],
+        dongle_light: ["GowunDodum-Light"],
+        dongle_semibolde: ["GowunDodum-Semibolde"],
       },
     },
   },

@@ -1,0 +1,116 @@
+[
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "빨강"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "주황"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "노랑"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "초록"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "파랑"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "남색"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "보라"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "검정"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "흰색"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "금색"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "연두"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "하늘색"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "분홍"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "청록"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "갈색"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "은색"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "회색"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "살구색"
+    }
+  },
+  {
+    "model": "pictures.color",
+    "fields": {
+      "name": "동색"
+    }
+  }
+]

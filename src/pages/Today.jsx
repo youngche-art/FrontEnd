@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { IoIosArrowRoundBack } from "react-icons/io";
@@ -7,6 +7,7 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 import Slider from "react-slick";
 import { IoChevronForwardOutline, IoChevronBackOutline } from "react-icons/io5";
 import PictureCard from "../components/PictureCard";
+import { getPictures } from "../api/firebase";
 
 const NextArrow = (props) => (
   <div {...props}>
@@ -44,13 +45,12 @@ export default function Today() {
     isLoading,
     error,
     data: videos,
-  } = useQuery(["videos", keyword], async () => {
-    return fetch(`/videos/${keyword ? "picture" : "picture"}.json`)
-      .then((res) => res.json())
-      .then((data) => data);
-  });
+  } = useQuery(["videos", keyword], getPictures);
   return (
     <div className="bg-white text-black p-12  ">
+      <h1 className="font-customFont text-5xl flex justify-center">
+        Popular Art
+      </h1>
       {isLoading && <p>Loading...</p>}
       {error && <p>Something is wrong...</p>}
       {videos && (
@@ -61,10 +61,12 @@ export default function Today() {
             ))}
           </Slider>
 
-          <div className="flex items-center justify-center blinking-text ">
+          <Link
+            to="/pictures"
+            className="flex items-center justify-center blinking-text "
+          >
             <h1 className="text-3xl mb-2 font-diphylleia ">more</h1>
-            <IoIosArrowRoundBack className="text-3xl ml-1 font-diphylleia " />{" "}
-          </div>
+          </Link>
         </div>
       )}
     </div>

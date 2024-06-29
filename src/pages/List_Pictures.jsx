@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import { IoChevronForwardOutline, IoChevronBackOutline } from "react-icons/io5";
 import PictureCard from "../components/PictureCard";
 import SelectBox from "../components/SelectBox";
+import { getPictures } from "../api/firebase";
 
 export default function List_Pictures() {
   const { keyword } = useParams();
@@ -15,11 +16,7 @@ export default function List_Pictures() {
     isLoading,
     error,
     data: videos,
-  } = useQuery(["videos", keyword], async () => {
-    return fetch(`/videos/${keyword ? "picture" : "picture"}.json`)
-      .then((res) => res.json())
-      .then((data) => data);
-  });
+  } = useQuery(["videos", keyword], getPictures);
   return (
     <div className="bg-white text-black p-12">
       <div className="flex justify-end">

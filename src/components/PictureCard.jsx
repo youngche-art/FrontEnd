@@ -15,7 +15,7 @@ export default function PictureCard({ video }) {
         alt="Your Image Description"
         className="w-full object-cover object-center p-4 h-[284px]"
       ></img>
-      <div className="flex justify-center p-4"> {video.id}</div>
+      <div className="flex justify-center p-4"> {video.제목}</div>
       <div className="flex justify-center p-4"> {video.창작날짜}</div>
     </div>
   );

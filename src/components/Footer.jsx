@@ -3,9 +3,15 @@ import { FaInstagram } from "react-icons/fa";
 import { IoIosCall } from "react-icons/io";
 
 export default function Footer() {
+  const isPictureDetailPage = window.location.pathname.includes("pictures/");
+  const footerClass = `${isPictureDetailPage ? "bg-white text-black" : ""} `;
+
+  const footerPadding = `${
+    isPictureDetailPage ? "p-4" : ""
+  } m-auto   text-center`;
   return (
-    <footer id="contact" class="section">
-      <div className="m-auto p-16 text-center ">
+    <footer id="contact" class={footerClass}>
+      <div className={footerPadding}>
         <h2 className="text-3xl">Let&#39;s talk</h2>
         <p className="text-2xl">donghe1472@gmail.com</p>
         <ul class="flex justify-center gap-4 p-4 text-3xl">

@@ -5,7 +5,7 @@ import {
   GoogleAuthProvider,
   signOut,
 } from "firebase/auth";
-import { getDatabase, ref, set, get } from "firebase/database";
+import { getDatabase, ref, set, get, child } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB8IDQmTyBBJUfxtP_meAqfu0XPIs7WLU0",
@@ -42,15 +42,5 @@ export async function logout() {
 }
 
 export async function getPictures() {
-  try {
-    const snapshot = await get(database);
-    if (snapshot.exists()) {
-      return Object.values(snapshot.val());
-    } else {
-      return [];
-    }
-  } catch (error) {
-    console.error("Error fetching pictures:", error);
-    throw error;
-  }
+  
 }

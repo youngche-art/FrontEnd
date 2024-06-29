@@ -35,6 +35,7 @@ export default function PictureDetail({}) {
           <Button text="관심리스트에 추가" onClick={handleClick} />
         </div>
       </section>
+      <Footer />
     </>
   );
 }
